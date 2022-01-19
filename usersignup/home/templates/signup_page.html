@@ -1,0 +1,23 @@
+<html>
+<body>
+</body>
+<form action="/signup/" method="post">
+    {% csrf_token %}
+
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+    <input type="text" name = "username" placeholder="username"><br>
+    <input type="text" name = "email" placeholder="Email"><br>
+    <input type="password" name = "password" placeholder="password"><br>
+    <input type="password" name = "conf_password" placeholder="Retype"><br>
+    <button>Submit</button>
+
+</form>
+</body>
+</html>
